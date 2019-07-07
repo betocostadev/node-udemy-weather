@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="shortcut icon" href="./img/weather.png" type="image/x-icon">
+  <link rel="stylesheet" href="./css/styles.css">
+  <script src="./js/app.js" async></script>
+  <title>Weather App</title>
+</head>
+<body>
+  <main>
+
+  {{>header}}
+  <p>Type the desired location below to get weather data.</p>
+
+  <form action="">
+    <input type="text" placeholder="Type the location">
+    <button>Search</button>
+  </form>
+
+  <p id="message-one"></p>
+  <p id="message-two"></p>
+
+  </main>
+  {{>footer}}
+
+</body>
+</html>
