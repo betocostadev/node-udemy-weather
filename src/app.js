@@ -51,7 +51,7 @@ app.get('/about', (req, res) => {
 app.get('', (req, res) => {
   res.render('index', {
     title: 'Weather App',
-    name: 'Beto Costa'
+    name: 'Beto Costa',
   })
 })
 

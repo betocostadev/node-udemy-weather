@@ -25,7 +25,11 @@ const forecast = (latitude, longitude, callback) => {
     } else if (body.error) {
       callback(`Error code: ${body.code}. ${body.error}`, undefined);
     } else {
-      callback(undefined, `${body.daily.data[0].summary} Temperatura: ${body.currently.temperature}°C, Precipitação: ${body.currently.precipProbability}%. Velocidade do Vento: ${body.currently.windSpeed} M/s (${ Math.floor(body.currently.windSpeed * 3.6)} K/h). Visibilidade: ${body.currently.visibility} M`);
+      callback(undefined, [
+      `${body.daily.data[0].summary}`,
+      `Temperatura: ${body.currently.temperature}°C | Sensação: ${body.currently.apparentTemperature}°C | Mínima/Máxima: ${body.daily.data[0].temperatureMin}°C / ${body.daily.data[0].temperatureMax}°C`,
+      `Precipitação: ${body.currently.precipProbability}%.`,
+      `Velocidade do Vento: ${body.currently.windSpeed} M/s (${ Math.floor(body.currently.windSpeed * 3.6)} K/h). Visibilidade: ${body.currently.visibility} Metros`]);
     }
   })
 }
