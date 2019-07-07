@@ -23,20 +23,24 @@ body.addEventListener('load', navigator.geolocation.getCurrentPosition(function(
   messageThree.textContent = ''
   messageFour.textContent = ''
   messageFive.textContent = ''
-  fetch(`/local?latitude=${position.coords.latitude}&longitude=${position.coords.longitude}`).then((response) => {
-    response.json().then((data) => {
-      if (data.error) {
-        messageOne.textContent = data.error
-        messageTwo.textContent = `Clima local`
-      } else {
-        messageOne.textContent = `Clima local`
-        messageTwo.textContent = data.forecast[0]
-        messageThree.textContent = data.forecast[1]
-        messageFour.textContent = data.forecast[2]
-        messageFive.textContent = data.forecast[3]
-      }
+
+  if(position.coords.latitude && position.coords.longitude) {
+    fetch(`/local?latitude=${position.coords.latitude}&longitude=${position.coords.longitude}`).then((response) => {
+      response.json().then((data) => {
+        if (data.error) {
+          messageOne.textContent = data.error
+          messageTwo.textContent = `Clima local`
+        } else {
+          messageOne.textContent = `Clima local`
+          messageTwo.textContent = data.forecast[0]
+          messageThree.textContent = data.forecast[1]
+          messageFour.textContent = data.forecast[2]
+          messageFive.textContent = data.forecast[3]
+        }
+      })
     })
-  })
+  }
+
 }));
 
 weatherForm.addEventListener('submit', (e) => {
