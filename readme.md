@@ -12,3 +12,4 @@ For Express.js referencing, please check the [documentation](https://expressjs.c
 
 - express@4.17.1
 - hbs
+- request

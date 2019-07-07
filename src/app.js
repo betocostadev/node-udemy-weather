@@ -22,6 +22,10 @@ const forecast = require('./utils/forecast')
 // console.log(__filename)
 // console.log(path.join(__dirname, '../public'));
 const app = express()
+
+// New const for using a dynamic port with heroku || 3000 for our internal use
+const port = process.env.PORT || 3000
+
 // Define paths for express:
 const publicDirPath = path.join(__dirname, '../public')
 // Views Path. A customizable path for views. Not making it, express with hbs will look for the views folder by default. (./views), in this case, we are using it inside the templates folder.
@@ -121,8 +125,8 @@ app.get('*', (req, res) => {
 })
 
 // Start the server
-app.listen(3000, () => {
-  console.log(`Server is up on port 3000.`)
+app.listen(port, () => {
+  console.log(`Server is up on port ${port}.`)
 })
 
 
