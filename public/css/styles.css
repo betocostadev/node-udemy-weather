@@ -71,3 +71,12 @@ button {
   background: #888;
   color: white;
 }
+
+@media only screen and (max-width: 550px) {
+  h1 {
+    font-size: 2rem;
+  }
+  .profile-picture {
+    max-width: 40vw;
+  }
+}
