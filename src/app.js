@@ -69,6 +69,17 @@ app.get('/help', (req, res) => {
   })
 })
 
+app.get('/local', (req, res) => {
+    forecast(req.query.latitude, req.query.longitude, (error, forecastData) =>{
+      if (error) {
+        return res.send({ error })
+      }
+      res.send({
+        forecast: forecastData,
+      })
+    })
+})
+
 app.get('/weather', (req, res) => {
   if (!req.query.address) {
     return res.send({
