@@ -29,7 +29,7 @@ body.addEventListener('load', navigator.geolocation.getCurrentPosition(function(
       response.json().then((data) => {
         if (data.error) {
           messageOne.textContent = data.error
-          messageTwo.textContent = `Clima local`
+          messageTwo.textContent = ``
         } else {
           messageOne.textContent = `Clima local`
           messageTwo.textContent = data.forecast[0]
