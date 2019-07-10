@@ -51,20 +51,23 @@ app.get('/about', (req, res) => {
 app.get('', (req, res) => {
   res.render('index', {
     title: 'Weather App',
+    subTitle: 'Forecast',
     name: 'Beto Costa',
   })
 })
 
 app.get('/about', (req, res) => {
   res.render('about', {
-    title: 'Weather App | About me',
+    title: 'Weather App',
+    subTitle: 'About',
     name: 'Beto Costa'
   })
 })
 
 app.get('/help', (req, res) => {
   res.render('help', {
-    title: 'Weather App | Help',
+    title: 'Weather App',
+    subTitle: 'Help',
     name: 'Beto Costa'
   })
 })
@@ -120,8 +123,9 @@ app.get('/weather', (req, res) => {
 
 app.get('/help/*', (req, res) => {
   res.render('404', {
-    title: '404 | Page not found',
-    errorMessage: 'Help article not found!',
+    title: '404',
+    subTitle: 'Page not found',
+    errorMessage: 'The help article you are looking for was not found!',
     name: 'Beto Costa'
   })
 })
@@ -129,8 +133,9 @@ app.get('/help/*', (req, res) => {
 // Last app.get: For 404 pages. Must be the last, because it will be used as a fallback.
 app.get('*', (req, res) => {
   res.render('404', {
-    title: '404 | Page not found',
-    errorMessage: 'The page you are looking for does not exist',
+    title: '404',
+    subTitle: 'Page not found',
+    errorMessage: 'The page you are looking was not found.',
     name: 'Beto Costa'
   })
 })

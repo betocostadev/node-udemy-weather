@@ -36,6 +36,10 @@ header a {
   text-decoration: none;
 }
 
+header a:hover {
+  text-decoration: underline;
+}
+
 main {
   flex: 1;
 }
@@ -52,8 +56,15 @@ h1 {
   margin: 1rem 0;
 }
 
+h2 {
+  font-size: 2rem;
+  margin: 1rem 0;
+}
+
 .profile-picture {
   max-width: 20vw;
+  -webkit-clip-path: polygon(7% 4%, 95% 5%, 96% 75%, 75% 75%, 50% 96%, 50% 75%, 7% 75%);
+  clip-path: polygon(7% 4%, 95% 5%, 96% 75%, 75% 75%, 50% 96%, 50% 75%, 7% 75%);
 }
 
 input {
@@ -76,11 +87,32 @@ button {
   font-weight: bold;
 }
 
+.external-link {
+  color: #888;
+  text-decoration: none;
+}
+.external-link:hover {
+  text-decoration: underline;
+}
+
+.footer-link {
+  font-weight: bold;
+  color: #888;
+  text-decoration: none;
+}
+
+.footer-link:hover {
+  text-decoration: underline;
+}
+
 @media only screen and (max-width: 550px) {
   h1 {
     font-size: 2rem;
   }
+  h2 {
+    font-size: 1.4rem;
+  }
   .profile-picture {
-    max-width: 40vw;
+    max-width: 45vw;
   }
 }

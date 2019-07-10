@@ -3,7 +3,7 @@
 ## Description
 
 This is the simple Weather App created based on [The complete Node.js Developer Course](https://www.udemy.com/the-complete-nodejs-developer-course-2/) from Udemy.
-Moved to a new repository to be easier to deploy using Heroku.
+Moved to a new repository to deploy using Heroku.
 
 For Express.js referencing, please check the [documentation](https://expressjs.com/).
 

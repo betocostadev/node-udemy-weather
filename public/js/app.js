@@ -31,7 +31,7 @@ body.addEventListener('load', navigator.geolocation.getCurrentPosition(function(
           messageOne.textContent = data.error
           messageTwo.textContent = ``
         } else {
-          messageOne.textContent = `Clima local`
+          messageOne.textContent = `Local climate`
           messageTwo.textContent = data.forecast[0]
           messageThree.textContent = data.forecast[1]
           messageFour.textContent = data.forecast[2]

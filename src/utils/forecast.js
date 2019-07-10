@@ -15,7 +15,7 @@ json: true - parse data into json
  */
 
 const forecast = (latitude, longitude, callback) => {
-  const url = `${darkskyAPI}${latitude},${longitude}?${options[1]}&${options[3]}`
+  const url = `${darkskyAPI}${latitude},${longitude}?${options[1]}&${options[2]}`
 
   // Since the url is the same, there is no need to use {url: url}
   // Since we know for the response we will use response.body, let's just destructure it:
@@ -27,9 +27,9 @@ const forecast = (latitude, longitude, callback) => {
     } else {
       callback(undefined, [
       `${body.daily.data[0].summary}`,
-      `Temperatura: ${body.currently.temperature}°C | Sensação: ${body.currently.apparentTemperature}°C | Mínima/Máxima: ${body.daily.data[0].temperatureMin}°C / ${body.daily.data[0].temperatureMax}°C`,
-      `Precipitação: ${body.currently.precipProbability}%.`,
-      `Velocidade do Vento: ${body.currently.windSpeed} M/s (${ Math.floor(body.currently.windSpeed * 3.6)} K/h). Visibilidade: ${body.currently.visibility} Metros`]);
+      `Temperature: ${body.currently.temperature}°C | Apparent: ${body.currently.apparentTemperature}°C | Min/Max: ${body.daily.data[0].temperatureMin}°C / ${body.daily.data[0].temperatureMax}°C`,
+      `Rain chance: ${body.currently.precipProbability}%.`,
+      `Wind Speed: ${body.currently.windSpeed} M/s (${ Math.floor(body.currently.windSpeed * 3.6)} K/h). Visibility: ${body.currently.visibility} Km`]);
     }
   })
 }
